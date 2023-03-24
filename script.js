@@ -1,13 +1,21 @@
 const dino = document.querySelector('#dino');
 const cactus = document.querySelector('#cactus');
+const exitBtn = document.querySelector('.game__btn-quit');
+const jumpBtn = document.querySelector('game__btn-jump');
 
-document.addEventListener("keydown", function(event) {
+document.addEventListener("keydown", function(evt) {
+
   jump();
 });
 
-console.log(dino,cactus)
-function jump() {
-  if (dino.classList != "jump") {
+document.addEventListener("click", function(evt) {
+// console.log(evt.target)
+jump()
+});
+
+// console.log(dino,cactus)
+const jump = (evt) => {
+  if (dino.classList != "jump" || evt.tardet === jumpBtn) {
     dino.classList.add("jump")
   }
   setTimeout( function() {
