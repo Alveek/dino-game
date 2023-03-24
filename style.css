@@ -4,6 +4,7 @@
   box-sizing: border-box;
 }
 
+
 .header {
   display: flex;
   flex-direction: row;
@@ -15,7 +16,9 @@
 }
 
 .header__title {
-  font-size: 50px;
+  font-family: 'Nunito', sans-serif;
+  font-family: 'VT323', monospace;
+  /* font-size: 50px; */
   font-weight: 400;
   text-align: center;
 }
@@ -40,7 +43,7 @@
 .game {
   max-width: 600px;
   height: 200px;
-  border-bottom: 0.3mm solid #000;
+  border-bottom: 0.3mm dashed  #000;
   margin: 0 auto;
   min-width: 250px;
   overflow: hidden;
@@ -58,6 +61,24 @@
 
 }
 
+.game__btn-quit {
+  /* display: block; */
+  width: 140px;
+  height: 50px;
+  border-radius: 15%;
+  position: relative;
+  font-family: 'Nunito', sans-serif;
+  font-family: 'VT323', monospace;
+}
+
+.game__icon-btn {
+  width: 35px;
+  height: 30px;
+  position: absolute;
+  bottom: 10px;
+  right: 5px;
+  padding-left: 5px;
+}
 
 
 #dino {
