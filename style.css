@@ -6,9 +6,9 @@
 
 @keyframes cactusMove {
   0% {
-    left: 580px;
+    left: 360px;
   }
-
+ 
   100% {
     left: -20px;
   }
@@ -182,7 +182,10 @@
   width: 180px;
   height: 150px;
 }
-/
+.game__score{
+   font-size: 25px;
+  font-weight: 400;
+}
 
 
 
