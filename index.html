@@ -19,15 +19,28 @@
    <h1 class="header__title">Dino-game</h1>
    <img class="header__icon" src="./img/fossil.png" alt="dino game logo">
   </header>
-    <div class="game__box">
+      <section class="page-start" aria-label="page start">
+      <div class="page-start__item">
+        <h2 class="page-start__title">Welcome to the game!</h2>
+        <p class="page-start__question">Are you ready ?</p>
+        <div class="main__btn-box">
+           <button class="game__btn game__btn-yes " > <img class="game__icon-btn" src="./img/dinosaur-yes.png" alt="btn-exit">Yes</button>
+       <button class="game__btn game__btn-no"> <img class="game__icon-btn" src="./img/egg-no.png" alt="btn-exit">No</button>
+        </div>
+      
+      </div>
+    </section>
+      <section class="game__box" aria-label="game page">
       <div class="game">
         <div id="dino"></div>
         <div id="cactus"></div>
       </div>
-       <button class="game__btn game__btn-quit " > <img class="game__icon-btn" src="./img/exit.png" alt="btn-exit">Exit game</button>
-       <button class="game__btn game__btn-jump"> <img class="game__icon-btn" src="./img/dino-foot.png" alt="btn-exit">Jump</button>
-    </div>
-
+      <div class="main__btn-box">
+       <button class="game__btn game__btn-jump"> <img class="game__icon-btn" src="./img/dino-foot.png" alt="btn jump">Jump</button>
+        <button class="game__btn game__btn-quit " > <img class="game__icon-btn" src="./img/exit.png" alt="btn-exit">Exit game</button>
+      </div>
+   
+    </section>
     <script type="text/javascript" src="./script.js"></script>
   </main>
 

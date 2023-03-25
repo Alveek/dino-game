@@ -4,103 +4,6 @@
   box-sizing: border-box;
 }
 
-
-.header {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 250px;
-  gap: 5px;
-  padding: 10px;
-}
-
-.header__title {
-  font-family: 'Nunito', sans-serif;
-  font-family: 'VT323', monospace;
-  /* font-size: 50px; */
-  font-weight: 400;
-  text-align: center;
-}
-
-.header__icon {
-  width: 40px;
-  height: 40px;
-}
-
-.main {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  width: 100%;
-  height: 100vh;
-  font-family: 'Nunito', sans-serif;
-  font-family: 'VT323', monospace;
-  /* background: url('./img/arcade-machine-screen.jpg') no-repeat;
-   background-size: contain; */
-}
-
-.game {
-  max-width: 600px;
-  height: 200px;
-  border-bottom: 0.3mm dashed  #000;
-  margin: 0 auto;
-  min-width: 250px;
-  overflow: hidden;
-}
-
-
-.game__box {
-  max-width: 700px;
-  min-height: 400px;
-  display: grid;
-  justify-content: center;
-  border: 4mm ridge rgba(142, 142, 136, 0.6);
-  padding: 20px;
-  margin: 0 auto;
-
-}
-
-.game__btn {
-  /* display: block; */
-  width: 140px;
-  height: 50px;
-  border-radius: 15%;
-  position: relative;
-  font-family: 'Nunito', sans-serif;
-  font-family: 'VT323', monospace;
-}
-
-.game__icon-btn {
-  width: 35px;
-  height: 30px;
-  position: absolute;
-  bottom: 10px;
-  right: 5px;
-  padding-left: 5px;
-}
-
-
-#dino {
-  width: 50px;
-  height: 50px;
-  background-image: url(./img/dino.png);
-  background-size: 50px 50px;
-  position: relative;
-  top: 150px;
-}
-
-#cactus {
-  width: 20px;
-  height: 40px;
-  background-image: url(./img/cactus.png);
-  background-size: 20px 40px;
-  position: relative;
-  top: 110px;
-  left: 580px;
-  animation: cactusMove 2s infinite linear;
-}
-
 @keyframes cactusMove {
   0% {
     left: 580px;
@@ -135,4 +38,127 @@
   100% {
     top: 150px;
   }
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 250px;
+  gap: 5px;
+  padding: 10px;
+}
+
+.header__title {
+  font-family: 'Nunito', sans-serif;
+  font-family: 'VT323', monospace;
+  font-size: 45px;
+  font-weight: 400;
+  text-align: center;
+}
+
+.header__icon {
+  width: 40px;
+  height: 40px;
+}
+
+.main {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+  gap: 10px;
+  font-family: 'Nunito', sans-serif;
+  font-family: 'VT323', monospace;
+  /* background: url('./img/arcade-machine-screen.jpg') no-repeat;
+   background-size: contain; */
+}
+
+.game {
+  max-width: 600px;
+  height: 200px;
+  border-bottom: 0.3mm dashed #000;
+  margin: 0 auto;
+  min-width: 250px;
+  overflow: hidden;
+}
+
+
+.game__box {
+  /* display: grid; */
+  display: none;
+  max-width: 700px;
+  min-height: 400px;
+  justify-content: center;
+  border: 4mm ridge rgba(142, 142, 136, 0.6);
+  padding: 20px;
+  margin: 0 auto;
+}
+
+.game__btn {
+  width: 140px;
+  height: 50px;
+  border-radius: 15%;
+  position: relative;
+  font-family: 'Nunito', sans-serif;
+  font-family: 'VT323', monospace;
+  cursor: pointer;
+  background-color: #f0eaeacc;
+}
+.game__btn:hover{
+background-color: #bbb5b5cc;
+}
+
+
+.game__icon-btn {
+  width: 35px;
+  height: 30px;
+  position: absolute;
+  bottom: 10px;
+  right: 5px;
+  padding-left: 5px;
+}
+
+
+#dino {
+  width: 50px;
+  height: 50px;
+  background-image: url(./img/dino.png);
+  background-size: 50px 50px;
+  position: relative;
+  top: 150px;
+}
+
+#cactus {
+  width: 20px;
+  height: 40px;
+  background-image: url(./img/cactus.png);
+  background-size: 20px 40px;
+  position: relative;
+  top: 110px;
+  left: 580px;
+  animation: cactusMove 2s infinite linear;
+}
+
+.page-start {
+ max-width: 400px;
+}
+
+.page-start__item {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  text-align: center;
+}
+
+.page-start__title {
+  font-size: 25px;
+  font-weight: 400;
+}
+.page-start__question{
+   font-size: 15px;
+  font-weight: 400;
 }
