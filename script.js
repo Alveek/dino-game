@@ -1,12 +1,14 @@
 const pageGame = document.querySelector('.game__box');
 const pageStart = document.querySelector('.page-start');
 const pageEnd = document.querySelector('.page-end');
+const pageGameOver = document.querySelector('.page-final');
 const dino = document.querySelector('#dino');
 const cactus = document.querySelector('#cactus');
 const exitBtn = document.querySelector('.game__btn-quit');
 const jumpBtn = document.querySelector('.game__btn-jump');
 const yesBtn = document.querySelector('.game__btn-yes');
 const noneBtn = document.querySelector('.game__btn-no');
+const playAgainBtn = document.querySelector('.game__btn-return');
 
 const fix = (evt) => {
   console.log(evt.target);
@@ -19,19 +21,26 @@ function inativePage(page) {
   page.classList.remove('active');
 }
 
+function rechangedPage(open,close) {
+  activePage(open)
+  inativePage(close)
+}
+
+
 const checkBtnStart = (evt) => {
   if (evt.target === yesBtn) {
-    activePage(pageGame);
-    inativePage(pageStart);
+    rechangedPage(pageGame,pageStart)
+    // activePage(pageGame);
+    // inativePage();
   } else if (evt.target === noneBtn) {
-    activePage(pageEnd);
-    inativePage(pageStart);
+    rechangedPage(pageEnd,pageStart)
+    // activePage(pageEnd);
+    // inativePage(pageStart);
   }
 };
 
-// console.log(dino,cactus)
-const jump = (evt) => {
-  if (dino.classList != 'jump' || evt.target === jumpBtn) {
+const jump = () => {
+  if (!dino.classList.contains("jump")) {
     dino.classList.add('jump');
   }
   setTimeout(function () {
@@ -43,10 +52,14 @@ let isAlive = setInterval(function () {
   let dinoTop = parseInt(window.getComputedStyle(dino).getPropertyValue('top'));
   let cactusLeft = parseInt(window.getComputedStyle(cactus).getPropertyValue('left'));
   if (cactusLeft < 50 && cactusLeft > 0 && dinoTop >= 140) {
-    // alert('GAME OVER!!');
+    rechangedPage(pageGameOver,pageGame)
+    // activePage(pageGameOver)
+    // inativePage(pageGame)
   }
+ 
 });
 
 document.addEventListener('keydown', () => jump());
 document.addEventListener('click', (evt) => checkBtnStart(evt));
 jumpBtn.addEventListener('click', () => jump());
+playAgainBtn.addEventListener('click', () => rechangedPage(pageGame,pageGameOver));

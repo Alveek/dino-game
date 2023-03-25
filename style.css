@@ -80,7 +80,7 @@
   max-width: 600px;
   height: 200px;
   border-bottom: 0.3mm dashed #000;
-  margin: 0 auto;
+  /* margin: 0 auto; */
   min-width: 250px;
   overflow: hidden;
 }
@@ -90,10 +90,12 @@
   display: none;
   max-width: 700px;
   min-height: 400px;
+  flex-direction: column;
   justify-content: center;
   border: 4mm ridge rgba(142, 142, 136, 0.6);
   padding: 20px;
   margin: 0 auto;
+  gap: 15px;
 }
 
 
@@ -109,8 +111,9 @@
   cursor: pointer;
   background-color: #f0eaeacc;
 }
-.game__btn:hover{
-background-color: #bbb5b5cc;
+
+.game__btn:hover {
+  background-color: #bbb5b5cc;
 }
 
 
@@ -145,32 +148,38 @@ background-color: #bbb5b5cc;
 }
 
 .page {
- display: none;
- max-width: 400px;
+  display: none;
+  max-width: 500px;
 }
 
 .page__item {
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 10px;
   text-align: center;
 }
 
 .page__title {
-  font-size: 25px;
+  font-size: 35px;
   font-weight: 400;
 }
-.page__question{
-   font-size: 15px;
+
+.page__subtitle {
+  font-size: 15px;
   font-weight: 400;
 }
-.page__icon{
-   width: 90px;
+
+.page__icon {
+  width: 90px;
   height: 80px;
   color: aqua;
 }
 
+.game__is-over {
+  width: 180px;
+  height: 150px;
+}
 
 
 
@@ -181,6 +190,7 @@ background-color: #bbb5b5cc;
 
 
 
-.active{
+
+.active {
   display: flex;
 }
