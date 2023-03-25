@@ -22,7 +22,7 @@ function activePage(page) {
 function inativePage(page) {
   page.classList.remove('active');
 }
-
+//можно написать через условие 
 function rechangedPage(open,close) {
   activePage(open)
   inativePage(close)
@@ -32,12 +32,8 @@ function rechangedPage(open,close) {
 const checkBtnStart = (evt) => {
   if (evt.target === yesBtn) {
     rechangedPage(pageGame,pageStart)
-    // activePage(pageGame);
-    // inativePage();
   } else if (evt.target === noneBtn ) {
     rechangedPage(pageEnd,pageStart)
-    // activePage(pageEnd);
-    // inativePage(pageStart);
   }
 };
 
@@ -56,8 +52,6 @@ let isAlive = setInterval(function () {
   if (cactusLeft < 40 && cactusLeft > 0 && dinoTop >= 140) {
     rechangedPage(pageGameOver,pageGame)
     console.log(dinoTop)
-    // activePage(pageGameOver)
-    // inativePage(pageGame)
   }
 
  
@@ -67,3 +61,4 @@ document.addEventListener('keydown', () => jump());
 document.addEventListener('click', (evt) => checkBtnStart(evt));
 jumpBtn.addEventListener('click', () => jump());
 playAgainBtn.addEventListener('click', () => rechangedPage(pageGame,pageGameOver));
+exitBtn.addEventListener('click', () => rechangedPage(pageGame,pageStart));
