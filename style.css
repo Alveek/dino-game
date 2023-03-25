@@ -87,7 +87,6 @@
 
 
 .game__box {
-  /* display: grid; */
   display: none;
   max-width: 700px;
   min-height: 400px;
@@ -96,6 +95,9 @@
   padding: 20px;
   margin: 0 auto;
 }
+
+
+
 
 .game__btn {
   width: 140px;
@@ -142,11 +144,12 @@ background-color: #bbb5b5cc;
   animation: cactusMove 2s infinite linear;
 }
 
-.page-start {
+.page {
+ display: none;
  max-width: 400px;
 }
 
-.page-start__item {
+.page__item {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -154,11 +157,30 @@ background-color: #bbb5b5cc;
   text-align: center;
 }
 
-.page-start__title {
+.page__title {
   font-size: 25px;
   font-weight: 400;
 }
-.page-start__question{
+.page__question{
    font-size: 15px;
   font-weight: 400;
+}
+.page__icon{
+   width: 90px;
+  height: 80px;
+  color: aqua;
+}
+
+
+
+
+
+
+
+
+
+
+
+.active{
+  display: flex;
 }
