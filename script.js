@@ -10,6 +10,8 @@ const yesBtn = document.querySelector('.game__btn-yes');
 const noneBtn = document.querySelector('.game__btn-no');
 const playAgainBtn = document.querySelector('.game__btn-return');
 
+let score = 0; 
+
 const fix = (evt) => {
   console.log(evt.target);
 };
@@ -32,7 +34,7 @@ const checkBtnStart = (evt) => {
     rechangedPage(pageGame,pageStart)
     // activePage(pageGame);
     // inativePage();
-  } else if (evt.target === noneBtn) {
+  } else if (evt.target === noneBtn ) {
     rechangedPage(pageEnd,pageStart)
     // activePage(pageEnd);
     // inativePage(pageStart);
@@ -51,11 +53,13 @@ const jump = () => {
 let isAlive = setInterval(function () {
   let dinoTop = parseInt(window.getComputedStyle(dino).getPropertyValue('top'));
   let cactusLeft = parseInt(window.getComputedStyle(cactus).getPropertyValue('left'));
-  if (cactusLeft < 50 && cactusLeft > 0 && dinoTop >= 140) {
+  if (cactusLeft < 40 && cactusLeft > 0 && dinoTop >= 140) {
     rechangedPage(pageGameOver,pageGame)
+    console.log(dinoTop)
     // activePage(pageGameOver)
     // inativePage(pageGame)
   }
+
  
 });
 

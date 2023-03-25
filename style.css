@@ -20,7 +20,7 @@
 
 @keyframes jump {
   0% {
-    top: 150px;
+    top: 160px;
   }
 
   30% {
@@ -36,7 +36,7 @@
   }
 
   100% {
-    top: 150px;
+    top: 160px;
   }
 }
 
