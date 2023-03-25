@@ -8,14 +8,14 @@
   0% {
     left: 360px;
   }
- 
+
   100% {
-    left: -20px;
+    left: -30px;
   }
 }
 
 .jump {
-  animation: jump 0.3s linear;
+  animation: jump 0.5s cubic-bezier(0.8, 0.67, 0.83, 0.67);
 }
 
 @keyframes jump {
@@ -28,7 +28,7 @@
   }
 
   50% {
-    top: 80px;
+    top: 60px;
   }
 
   80% {
@@ -48,7 +48,6 @@
   max-width: 250px;
   gap: 5px;
   padding: 10px;
-  
 }
 
 .header__title {
@@ -85,8 +84,8 @@
   /* margin: 0 auto; */
   min-width: 250px;
   overflow: hidden;
+  position: relative;
 }
-
 
 .game__box {
   display: none;
@@ -99,9 +98,6 @@
   margin: 0 auto;
   gap: 20px;
 }
-
-
-
 
 .game__btn {
   width: 140px;
@@ -118,7 +114,6 @@
   background-color: #bbb5b5cc;
 }
 
-
 .game__icon-btn {
   width: 35px;
   height: 30px;
@@ -127,7 +122,6 @@
   right: 5px;
   padding-left: 5px;
 }
-
 
 #dino {
   width: 50px;
@@ -182,20 +176,18 @@
   width: 180px;
   height: 150px;
 }
-.game__score{
-   font-size: 25px;
+.game__score {
+  font-size: 25px;
   font-weight: 400;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
-
-
-
-
-
-
-
-
-
+.game__score_final {
+  font-size: 25px;
+  font-weight: 400;
+}
 
 .active {
   display: flex;

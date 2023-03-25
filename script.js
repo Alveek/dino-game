@@ -10,6 +10,8 @@ const jumpBtn = document.querySelector('.game__btn-jump');
 const yesBtn = pageStart.querySelector('.game__btn-yes');
 const noneBtn = pageStart.querySelector('.game__btn-no');
 const playAgainBtn = pageGameOver.querySelector('.game__btn-return');
+const gameScore = document.querySelector('.game__score span');
+const gameScoreFinal = document.querySelector('.game__score_final span');
 
 let score = 0;
 
@@ -19,6 +21,8 @@ const fix = (evt) => {
 
 //фукнции для отобажения активных страниц
 function activePage(page) {
+  score = 0;
+  gameScore.textContent = 0;
   page.classList.add('active');
 }
 function inativePage(page) {
@@ -44,6 +48,10 @@ const jump = () => {
     dino.classList.add('jump');
   }
   setTimeout(function () {
+    if (cactus.offsetLeft < 0) {
+      score += 20;
+      gameScore.textContent = score;
+    }
     dino.classList.remove('jump');
   }, 400);
 };
@@ -52,8 +60,8 @@ let isAlive = setInterval(function () {
   let dinoTop = parseInt(window.getComputedStyle(dino).getPropertyValue('top'));
   let cactusLeft = parseInt(window.getComputedStyle(cactus).getPropertyValue('left'));
   if (cactusLeft < 30 && cactusLeft > 0 && dinoTop >= 140) {
+    gameScoreFinal.textContent = score;
     rechangedPage(pageGameOver, pageGame);
-    console.log(dinoTop);
   }
 });
 
@@ -62,4 +70,4 @@ document.addEventListener('click', (evt) => checkBtnStart(evt));
 jumpBtn.addEventListener('click', () => jump());
 playAgainBtn.addEventListener('click', () => rechangedPage(pageGame, pageGameOver));
 backBtn.addEventListener('click', () => rechangedPage(pageStart, pageEnd));
-exitBtn.addEventListener('click', () =>rechangedPage(pageStart, pageGame));
+exitBtn.addEventListener('click', () => rechangedPage(pageStart, pageGame));
